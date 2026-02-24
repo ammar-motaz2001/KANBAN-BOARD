@@ -5,12 +5,8 @@ import { taskService } from '@/services/task.service';
 import type { Task, CreateTaskInput, UpdateTaskInput } from '@/types/task.types';
 
 /**
- * Custom hook to fetch all tasks
- * 
- * Uses React Query to fetch and cache all tasks from the API.
- * Data is cached for 5 minutes and persists for 10 minutes.
- * 
- * @returns React Query result object with tasks data, loading state, and error
+ * Fetch all tasks with React Query caching
+ * Data stays fresh for 5 minutes, cached for 10
  */
 export function useTasks() {
   return useQuery({
@@ -23,13 +19,8 @@ export function useTasks() {
 }
 
 /**
- * Custom hook to fetch a single task by ID
- * 
- * Uses React Query to fetch and cache a specific task.
- * Only fetches if a valid ID is provided.
- * 
- * @param id - The ID of the task to fetch
- * @returns React Query result object with task data, loading state, and error
+ * Fetch a single task by ID
+ * Only runs if you give it a valid ID
  */
 export function useTask(id: number) {
   return useQuery({
@@ -40,12 +31,8 @@ export function useTask(id: number) {
 }
 
 /**
- * Custom hook to create a new task
- * 
- * Uses React Query mutation with optimistic updates for instant UI feedback.
- * Automatically updates the cache and refetches to ensure consistency.
- * 
- * @returns React Query mutation object with mutate function and mutation state
+ * Create a new task
+ * Does optimistic updates so the UI feels instant
  */
 export function useCreateTask() {
   const queryClient = useQueryClient();
@@ -64,12 +51,8 @@ export function useCreateTask() {
 }
 
 /**
- * Custom hook to update an existing task
- * 
- * Uses React Query mutation with optimistic updates for instant UI feedback.
- * Automatically updates the cache and refetches to ensure consistency.
- * 
- * @returns React Query mutation object with mutate function and mutation state
+ * Update an existing task
+ * Optimistic updates for instant feedback
  */
 export function useUpdateTask() {
   const queryClient = useQueryClient();
@@ -89,12 +72,8 @@ export function useUpdateTask() {
 }
 
 /**
- * Custom hook to delete a task
- * 
- * Uses React Query mutation with optimistic updates for instant UI feedback.
- * Automatically updates the cache and refetches to ensure consistency.
- * 
- * @returns React Query mutation object with mutate function and mutation state
+ * Delete a task
+ * Optimistic updates so it disappears immediately
  */
 export function useDeleteTask() {
   const queryClient = useQueryClient();

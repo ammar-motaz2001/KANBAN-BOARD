@@ -22,9 +22,8 @@ interface UseTaskDialogReturn {
 }
 
 /**
- * Custom hook for managing task dialog form state
- * @param props - Dialog props containing task and open state
- * @returns Form state and handlers for task dialog
+ * Manages the form state for creating/editing tasks
+ * Handles title, description, column, and priority fields
  */
 export function useTaskDialog({ task, open }: UseTaskDialogProps): UseTaskDialogReturn {
   const [title, setTitle] = useState('');

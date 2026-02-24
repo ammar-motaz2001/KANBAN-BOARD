@@ -10,11 +10,7 @@ interface ThemeRegistryProps {
 }
 
 /**
- * Inner component that uses theme context to provide Material UI theme
- * 
- * @param props - Component props
- * @param props.children - Child components to wrap with theme provider
- * @returns JSX element wrapping children with ThemeProvider
+ * Inner component that applies the theme based on context
  */
 function ThemedContent({ children }: { children: React.ReactNode }) {
   const { mode } = useThemeContext();
@@ -29,14 +25,8 @@ function ThemedContent({ children }: { children: React.ReactNode }) {
 }
 
 /**
- * Theme registry component
- * 
- * Wraps the application with Material UI theme provider and CssBaseline.
- * Integrates with ThemeContext to provide dynamic theme switching between light and dark modes.
- * 
- * @param props - Component props
- * @param props.children - Child components to wrap with theme registry
- * @returns JSX element wrapping children with theme providers
+ * Wraps the app with Material UI theme
+ * Handles switching between light and dark modes
  */
 export function ThemeRegistry({ children }: ThemeRegistryProps) {
   return (

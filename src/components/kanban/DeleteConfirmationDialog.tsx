@@ -18,18 +18,8 @@ interface DeleteConfirmationDialogProps {
 }
 
 /**
- * Professional delete confirmation dialog component
- * 
- * This is a presentational component that displays a confirmation dialog
- * before deleting a task. It provides a professional UI with warning icon
- * and task information.
- * 
- * @param props - Component props
- * @param props.open - Whether the dialog is open
- * @param props.taskTitle - The title of the task to be deleted
- * @param props.onClose - Callback function when dialog is closed
- * @param props.onConfirm - Callback function when deletion is confirmed
- * @returns JSX element representing the delete confirmation dialog
+ * Delete confirmation dialog - asks user to confirm before deleting
+ * Shows the task title so you know what you're deleting
  */
 export function DeleteConfirmationDialog({
   open,

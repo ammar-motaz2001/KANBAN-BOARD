@@ -30,20 +30,8 @@ interface KanbanColumnProps {
 }
 
 /**
- * Kanban column component with drop zone and task list
- * 
- * This is a presentational component that displays a single column in the Kanban board.
- * All pagination and scroll logic is handled by the useKanbanColumn custom hook.
- * 
- * @param props - Component props
- * @param props.columnId - The unique identifier for this column
- * @param props.title - Display title for the column
- * @param props.tasks - Array of tasks to display in this column
- * @param props.onEdit - Callback function when a task is edited
- * @param props.onDelete - Callback function when a task is deleted
- * @param props.onAddTask - Callback function when adding a new task
- * @param props.itemsPerPage - Number of items to display per page (default: 5)
- * @returns JSX element representing a Kanban column
+ * Single Kanban column - shows tasks in a column with drop zone
+ * Pagination logic is in useKanbanColumn hook
  */
 export function KanbanColumn({
   columnId,

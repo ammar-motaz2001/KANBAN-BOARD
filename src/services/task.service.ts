@@ -3,17 +3,12 @@ import type { Task, CreateTaskInput, UpdateTaskInput } from '@/types/task.types'
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
 /**
- * Task service for API operations
- * 
- * Provides methods for CRUD operations on tasks.
- * All methods return promises and throw errors on failure.
+ * API calls for tasks - all the CRUD stuff
+ * Just wraps fetch calls to the json-server API
  */
 export const taskService = {
   /**
-   * Fetches all tasks from the API
-   * 
-   * @returns Promise resolving to an array of tasks
-   * @throws Error if the request fails
+   * Get all tasks from the API
    */
   async getAllTasks(): Promise<Task[]> {
     const response = await fetch(`${API_BASE_URL}/tasks`);
@@ -24,11 +19,7 @@ export const taskService = {
   },
 
   /**
-   * Fetches a single task by ID
-   * 
-   * @param id - The ID of the task to fetch
-   * @returns Promise resolving to the task
-   * @throws Error if the request fails
+   * Get a single task by ID
    */
   async getTaskById(id: number): Promise<Task> {
     const response = await fetch(`${API_BASE_URL}/tasks/${id}`);
@@ -39,11 +30,7 @@ export const taskService = {
   },
 
   /**
-   * Creates a new task
-   * 
-   * @param task - The task data to create
-   * @returns Promise resolving to the created task
-   * @throws Error if the request fails
+   * Create a new task
    */
   async createTask(task: CreateTaskInput): Promise<Task> {
     const response = await fetch(`${API_BASE_URL}/tasks`, {
@@ -60,12 +47,7 @@ export const taskService = {
   },
 
   /**
-   * Updates an existing task
-   * 
-   * @param id - The ID of the task to update
-   * @param task - The partial task data to update
-   * @returns Promise resolving to the updated task
-   * @throws Error if the request fails
+   * Update an existing task
    */
   async updateTask(id: number, task: UpdateTaskInput): Promise<Task> {
     const response = await fetch(`${API_BASE_URL}/tasks/${id}`, {
@@ -82,11 +64,7 @@ export const taskService = {
   },
 
   /**
-   * Deletes a task
-   * 
-   * @param id - The ID of the task to delete
-   * @returns Promise that resolves when the task is deleted
-   * @throws Error if the request fails
+   * Delete a task
    */
   async deleteTask(id: number): Promise<void> {
     const response = await fetch(`${API_BASE_URL}/tasks/${id}`, {

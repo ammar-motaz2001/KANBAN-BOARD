@@ -6,13 +6,6 @@
       "description": "Include hero section with call-to-action buttons",
       "column": "6",
       "priority": "high"
-    },
-    {
-      "id": "f34b",
-      "title": "Front end",
-      "description": "asfasf",
-      "column": "review",
-      "priority": "low"
     }
   ]
 }

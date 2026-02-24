@@ -17,9 +17,8 @@ interface UseKanbanColumnReturn {
 }
 
 /**
- * Custom hook for managing Kanban column pagination and infinite scroll
- * @param props - Column props containing tasks and items per page
- * @returns Pagination state and handlers
+ * Handles pagination and infinite scroll for a column
+ * Shows 5 tasks at a time by default, with a load more button
  */
 export function useKanbanColumn({
   tasks,

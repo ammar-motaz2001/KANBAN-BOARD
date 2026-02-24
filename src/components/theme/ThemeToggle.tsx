@@ -7,12 +7,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useThemeContext } from './ThemeContext';
 
 /**
- * Theme toggle button component
- * 
- * This is a presentational component that displays a button to toggle between
- * light and dark themes. It uses the ThemeContext to manage theme state.
- * 
- * @returns JSX element representing the theme toggle button
+ * Button to toggle between light and dark mode
  */
 export function ThemeToggle() {
   const { mode, toggleMode } = useThemeContext();

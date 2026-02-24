@@ -28,12 +28,8 @@ const COLUMNS: { id: TaskColumn; title: string }[] = [
 ];
 
 /**
- * Main Kanban board component with drag-and-drop functionality
- * 
- * This is a presentational component that handles the UI layout and rendering.
- * All business logic is handled by the useKanbanBoard custom hook.
- * 
- * @returns JSX element representing the Kanban board
+ * Main Kanban board - just handles the UI layout
+ * All the logic is in useKanbanBoard hook
  */
 export function KanbanBoard() {
   const {

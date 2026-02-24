@@ -31,17 +31,8 @@ const PRIORITIES: { value: TaskPriority; label: string }[] = [
 ];
 
 /**
- * Dialog component for creating and editing tasks
- * 
- * This is a presentational component that displays a form dialog for task creation/editing.
- * All form state management is handled by the useTaskDialog custom hook.
- * 
- * @param props - Component props
- * @param props.open - Whether the dialog is open
- * @param props.task - The task to edit (null for new task)
- * @param props.onClose - Callback function when dialog is closed
- * @param props.onSave - Callback function when task is saved
- * @returns JSX element representing the task dialog
+ * Dialog for creating/editing tasks
+ * Form state is handled by useTaskDialog hook
  */
 export function TaskDialog({ open, task, onClose, onSave }: TaskDialogProps) {
   const {

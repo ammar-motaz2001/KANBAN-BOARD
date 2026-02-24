@@ -12,8 +12,8 @@ import { useTasks, useCreateTask, useUpdateTask, useDeleteTask } from './use-tas
 import type { Task, TaskColumn, CreateTaskInput, UpdateTaskInput } from '@/types/task.types';
 
 /**
- * Custom hook for managing Kanban board state and operations
- * @returns Object containing board state, handlers, and computed values
+ * Handles all the Kanban board logic - drag and drop, search, task operations
+ * Returns everything the board component needs to render
  */
 export function useKanbanBoard() {
   const { data: tasks = [], isLoading } = useTasks();
@@ -151,7 +151,6 @@ export function useKanbanBoard() {
   };
 
   return {
-    // State
     isLoading,
     searchQuery,
     dialogOpen,
@@ -161,7 +160,7 @@ export function useKanbanBoard() {
     activeTask,
     tasksByColumn,
     sensors,
-    // Handlers
+
     setSearchQuery,
     handleDragStart,
     handleDragEnd,

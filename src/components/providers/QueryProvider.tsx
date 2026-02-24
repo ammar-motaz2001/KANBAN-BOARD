@@ -8,14 +8,8 @@ interface QueryProviderProps {
 }
 
 /**
- * React Query provider component
- * 
- * Provides React Query context to the application with optimized caching configuration.
- * Configures stale time, cache time, and refetch behavior for better performance.
- * 
- * @param props - Component props
- * @param props.children - Child components to wrap with React Query provider
- * @returns JSX element wrapping children with QueryClientProvider
+ * React Query provider setup
+ * Configures caching - data stays fresh for 5 min, cached for 10 min
  */
 export function QueryProvider({ children }: QueryProviderProps) {
   const [queryClient] = useState(

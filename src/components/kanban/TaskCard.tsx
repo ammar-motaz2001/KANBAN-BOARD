@@ -25,16 +25,8 @@ const PRIORITY_COLORS: Record<TaskPriority, { bg: string; color: string }> = {
 };
 
 /**
- * Individual task card component with drag-and-drop support
- * 
- * This is a presentational component that displays a single task card.
- * It supports drag-and-drop functionality and includes edit/delete actions.
- * 
- * @param props - Component props
- * @param props.task - The task data to display
- * @param props.onEdit - Callback function when edit button is clicked
- * @param props.onDelete - Callback function when delete button is clicked
- * @returns JSX element representing a task card
+ * Task card component - shows a single task
+ * Handles drag and drop, has edit/delete buttons
  */
 export function TaskCard({ task, onEdit, onDelete }: TaskCardProps) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
